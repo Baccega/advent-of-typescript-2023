@@ -12,6 +12,6 @@ type FindSantaMatrix<T extends any[][], Acc extends any[] = []> = T extends [
   ...infer Rest extends any[][]
 ]
   ? FindSantaArray<Array> extends never
-    ? FindSanta<Rest, [...Acc, Array]>
+    ? FindSantaMatrix<Rest, [...Acc, Array]>
     : [Acc["length"], FindSantaArray<Array>]
   : never;
